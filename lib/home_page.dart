@@ -27,8 +27,7 @@ class _HomePageState extends State<HomePage> {
         idToken: _signInAuthentication.idToken,
         accessToken: _signInAuthentication.accessToken);
 
-    FirebaseUser user =
-        await _firebaseAuth.signInWithCredential(authCredential);
+    FirebaseUser user = (await FirebaseAuth.instance.signInWithCredential(authCredential)).user;
     return user;
   }
 
